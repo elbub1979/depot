@@ -10,7 +10,6 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:description].any?
     assert product.errors[:price].any?
     assert product.errors[:image_url].any?
-    assert_equal ["can't be blank"], product.errors[:title]
   end
 
   test 'product price must be positive' do
@@ -58,7 +57,6 @@ class ProductTest < ActiveSupport::TestCase
       # не должно быть приемлемым
     end
   end
-
   test 'product is not valid without a unique title' do
     # если у товара нет уникального названия, то он недопустим
     product = Product.new(title: products(:ruby).title,
@@ -69,7 +67,6 @@ class ProductTest < ActiveSupport::TestCase
                           image_url:
                             'fred.gif')
     assert product.invalid?
-    assert_equal ['has already been taken'], product.errors[:title]
     # уже было использовано
   end
 
