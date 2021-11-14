@@ -30,6 +30,10 @@ gem 'turbolinks', '~> 1.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'activemerchant', '~> 1.31', require: 'active_merchant'
+gem 'haml', '~> 4.0'
+gem 'kaminari', '~> 0.14'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

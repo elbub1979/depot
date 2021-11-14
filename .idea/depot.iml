@@ -31,6 +31,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v4.0.13, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v4.0.13, rbenv: 2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemerchant (v1.62.0, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.0.13, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.0.13, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord-deprecated_finders (v1.0.4, rbenv: 2.0.0-p648) [gem]" level="application" />
@@ -46,16 +47,20 @@
     <orderEntry type="library" scope="PROVIDED" name="debase-ruby_core_source (v0.10.12, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.8.1, rbenv: 2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="haml (v4.0.7, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.9.5, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v1.5.3, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.5, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v6.0.1, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.6, rbenv: 2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.17.0, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, rbenv: 2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.1.0, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v4.7.5, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.15.0, rbenv: 2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.8.1, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.5, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, rbenv: 2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.0.13, rbenv: 2.0.0-p648) [gem]" level="application" />
@@ -92,6 +97,8 @@
         <option value="jbuilder" />
         <option value="jquery:install" />
         <option value="js:assets" />
+        <option value="kaminari:config" />
+        <option value="kaminari:views" />
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
@@ -113,6 +120,8 @@
         <option value="jbuilder" />
         <option value="jquery:install" />
         <option value="js:assets" />
+        <option value="kaminari:config" />
+        <option value="kaminari:views" />
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
