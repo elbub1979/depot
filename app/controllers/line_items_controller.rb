@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
+  skip_before_action :authorize, only: [:create]
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: %i[show edit update destroy]
 
@@ -37,7 +38,9 @@ class LineItemsController < ApplicationController
         end
       else
         format.html { render action: 'new' }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @line_item.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -47,11 +50,15 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html do
+          redirect_to @line_item, notice: 'Line item was successfully updated.'
+        end
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @line_item.errors, status: :unprocessable_entity
+        end
       end
     end
   end

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
+  skip_before_action :authorize, only: [:new, :create]
   before_action :set_cart, only: %i[new create]
   before_action :set_order, only: %i[show edit update destroy]
 
@@ -52,11 +53,15 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html do
+          redirect_to @order, notice: 'Order was successfully updated.'
+        end
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @order.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -78,7 +83,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def order_params
     params.require(:order).permit(:name, :address, :email, :pay_type)
   end

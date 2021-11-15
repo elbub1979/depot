@@ -14,6 +14,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'thor', '0.19.1'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.1.2'
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 

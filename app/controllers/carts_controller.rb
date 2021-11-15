@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  skip_before_action :authorize, only: %i[create update destroy]
   before_action :set_cart, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
@@ -10,8 +11,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1
   # GET /carts/1.json
-  def show
-  end
+  def show; end
 
   # GET /carts/new
   def new
@@ -19,8 +19,7 @@ class CartsController < ApplicationController
   end
 
   # GET /carts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /carts
   # POST /carts.json
@@ -29,7 +28,9 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html do
+          redirect_to @cart, notice: 'Cart was successfully created.'
+        end
         format.json { render action: 'show', status: :created, location: @cart }
       else
         format.html { render action: 'new' }
@@ -43,7 +44,9 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html do
+          redirect_to @cart, notice: 'Cart was successfully updated.'
+        end
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,7 +73,8 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def cart_params
     params[:cart]
   end
